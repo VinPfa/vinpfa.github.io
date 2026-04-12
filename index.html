@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dataset Name (TBD)</title>
+  <title>Engagement Intention Dataset</title>
   <style>
     :root {
       --text: #1f2328;
@@ -12,7 +12,7 @@
       --bg-soft: #f6f8fa;
       --bg-highlight: #eef6ff;
       --border: #d0d7de;
-      --max-width: 1100px;
+      --max-width: 980px;
     }
 
     * {
@@ -30,45 +30,37 @@
     .container {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 40px 24px 80px;
+      padding: 40px 24px 72px;
     }
 
-    h1, h2, h3 {
+    h1, h2 {
       color: #111;
       line-height: 1.25;
-      margin-top: 0;
     }
 
     h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
+      font-size: 2.3rem;
+      margin: 0 0 10px;
     }
 
     h2 {
-      font-size: 1.6rem;
-      margin-top: 48px;
-      margin-bottom: 16px;
+      font-size: 1.45rem;
+      margin: 42px 0 14px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
     }
 
-    h3 {
-      font-size: 1.15rem;
-      margin-top: 28px;
-      margin-bottom: 10px;
-    }
-
     p {
-      margin: 0 0 16px;
+      margin: 0 0 14px;
     }
 
     ul {
-      margin: 0 0 18px 22px;
+      margin: 0 0 14px 20px;
       padding: 0;
     }
 
     li {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     a {
@@ -82,16 +74,15 @@
 
     .hero {
       padding: 28px;
-      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
       border: 1px solid var(--border);
       border-radius: 14px;
-      margin-bottom: 28px;
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
     }
 
     .subtitle {
-      font-size: 1.1rem;
       color: var(--muted);
-      margin-bottom: 18px;
+      font-size: 1.08rem;
+      margin-bottom: 16px;
     }
 
     .meta {
@@ -100,36 +91,58 @@
     }
 
     .highlight {
-      background: var(--bg-highlight);
+      margin-top: 20px;
+      padding: 15px 16px;
       border-left: 4px solid var(--accent);
-      padding: 16px 18px;
+      background: var(--bg-highlight);
       border-radius: 8px;
-      margin: 22px 0 0;
+    }
+
+    .media-box {
+      margin-top: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .media-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 520px;
+      border: 0;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin: 20px 0 8px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
     }
 
     .card {
       background: var(--bg-soft);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 18px;
+      padding: 16px;
     }
 
-    .card h3 {
-      margin-top: 0;
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
     }
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 14px;
-      margin-top: 18px;
+      margin-top: 16px;
     }
 
     .stat {
@@ -140,7 +153,7 @@
     }
 
     .stat .value {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: bold;
       color: #111;
       margin-bottom: 4px;
@@ -149,30 +162,6 @@
     .stat .label {
       color: var(--muted);
       font-size: 0.95rem;
-    }
-
-    .table-wrap {
-      overflow-x: auto;
-      margin-top: 16px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    th {
-      background: var(--bg-soft);
     }
 
     pre {
@@ -184,56 +173,21 @@
       line-height: 1.45;
     }
 
-    .note {
+    .small {
       color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .footer {
-      margin-top: 56px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 12px 0 0;
-    }
-
-    .tag {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 0.92rem;
-      color: #243b53;
-    }
-
-    .placeholder-box {
-      border: 2px dashed var(--border);
-      border-radius: 12px;
-      padding: 26px;
-      background: #fafbfc;
-      text-align: center;
-      color: var(--muted);
-      margin-top: 18px;
     }
 
     @media (max-width: 700px) {
       .container {
-        padding: 28px 16px 60px;
+        padding: 28px 16px 56px;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 1.95rem;
       }
 
-      h2 {
-        font-size: 1.4rem;
+      iframe {
+        height: 380px;
       }
     }
   </style>
@@ -242,302 +196,94 @@
   <div class="container">
 
     <section class="hero">
-      <h1>Dataset Name (TBD)</h1>
+      <h1>Engagement Intention Dataset</h1>
       <p class="subtitle">
         Multi-modal dataset for engagement intention prediction in human-robot interaction
       </p>
 
       <p class="meta">
-        <strong>Author:</strong> Vincent Pfaefflin<br>
-        <strong>Affiliation:</strong> Karlsruhe Institute of Technology (KIT)<br>
-        <strong>Collaboration:</strong> Bosch Robotics Lab, Renningen, Germany
+        <strong>Vincent Pfaefflin</strong><br>
+        Karlsruhe Institute of Technology (KIT)<br>
+        Bosch Robotics Lab, Renningen
       </p>
 
       <div class="highlight">
-        This dataset captures <strong>pre-engagement behavior</strong> in a robot-centric,
-        multi-target environment, including both <strong>stationary</strong> and
-        <strong>moving robot</strong> conditions, 360° fisheye video and 3D full-body poses.
+        The dataset captures pre-engagement behavior in a multi-target environment with a stationary or moving robot, robot-centric 360° fisheye video and 3D full-body pose data.
       </div>
     </section>
 
     <section>
       <h2>Overview</h2>
       <p>
-        This dataset supports research on <strong>engagement intention prediction</strong> in
-        human-robot interaction. It focuses on the period <em>before</em> a person starts
-        interacting with a robot, rather than only modeling ongoing interaction.
+        This dataset is designed for studying whether a person intends to engage with a robot before the actual interaction begins.
       </p>
       <p>
-        The data was collected in a controlled lab environment using a gamified puzzle task in
-        which participants moved between multiple stations, one of which was a mobile robot.
-        Because the robot was only one of several possible targets, the dataset captures realistic
-        ambiguity between approaching the robot and approaching another station.
+        Participants solve a puzzle task in an environment with six table stations and one robot station. As they move between targets, the data captures natural approach behavior, including cases where the robot is not the intended destination.
       </p>
+      <p>
+        For detailed methodology, processing steps and evaluation settings, please refer to the paper.
+      </p>
+    </section>
 
-      <div class="tag-list">
-        <span class="tag">Pre-engagement detection</span>
-        <span class="tag">360° robot-centric view</span>
-        <span class="tag">Moving robot condition</span>
-        <span class="tag">Multi-target environment</span>
-        <span class="tag">3D full-body pose</span>
+    <section>
+      <h2>Teaser</h2>
+      <div class="media-box">
+        <img src="teaser.png" alt="Overview of the dataset setup and recorded interaction scene">
       </div>
     </section>
 
     <section>
-      <h2>Why this dataset?</h2>
+      <h2>Interactive Visualization</h2>
       <p>
-        Existing HRI datasets often focus on detecting who is currently engaged, rather than
-        predicting whether someone is about to engage. They also frequently rely on static robots,
-        single-target setups, fixed external cameras or scripted behavior.
+        The visualization below shows example skeleton trajectories, target stations and temporal progression within the recorded environment.
       </p>
-      <p>
-        This dataset addresses these gaps by capturing natural, goal-driven behavior in a
-        multi-target setting with robot mobility and fully robot-centric sensing.
-      </p>
+      <div class="media-box">
+        <iframe src="demo/index.html" title="Interactive dataset visualization"></iframe>
+      </div>
+    </section>
 
+    <section>
+      <h2>Recording and labeling</h2>
       <div class="grid">
         <div class="card">
-          <h3>Pre-engagement behavior</h3>
-          <p>
-            Captures the transitional phase before interaction begins, including movement,
-            orientation and approach behavior.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Multi-target ambiguity</h3>
-          <p>
-            Participants may approach the robot or one of six alternative stations, making the
-            prediction task more realistic.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Robot mobility</h3>
-          <p>
-            Includes both stationary and moving robot conditions, enabling evaluation in dynamic
-            scenarios.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Natural task context</h3>
-          <p>
-            Interaction emerges from a gamified puzzle task rather than explicit instructions to
-            engage with the robot.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Experimental setup</h2>
-      <p>
-        The interaction area covers roughly <strong>7 m × 7 m</strong>. It contains
-        <strong>six tables</strong> arranged in an elliptical formation around a robot located at
-        the center, which functions as the <strong>seventh station</strong>. The distance between
-        the robot and the tables ranges from approximately <strong>3.1 m to 4.5 m</strong>.
-      </p>
-      <p>
-        The setup was designed to allow sufficient space for navigation while preserving a clear
-        spatial relationship between the robot and the surrounding stations.
-      </p>
-
-      <div class="placeholder-box">
-        Teaser image / setup figure can be inserted here later
-      </div>
-    </section>
-
-    <section>
-      <h2>Task and conditions</h2>
-      <p>
-        Each of the seven stations contains a unique colored puzzle with one visible center piece
-        and six outer pieces distributed across the other stations. At the beginning, each station
-        contains one upward-facing piece identifying the puzzle for that location, and six random
-        face-down pieces belonging to the other puzzles. Pieces belonging to the robot station
-        include an additional <strong>"R"</strong> marking.
-      </p>
-      <p>
-        Participants solve the task by picking up one face-down puzzle piece at a time, revealing
-        its color, carrying it to the matching station, placing it and then picking up a new piece
-        from that station. This process repeats until all puzzles are completed.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Stationary condition</h3>
-          <p>
-            The robot remains at the central position and acts as a fixed interaction target.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Moving condition</h3>
-          <p>
-            The robot moves along a predefined path between two locations. The experimenter
-            manually pauses and resumes its motion to allow puzzle interaction on the robot.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Participant instructions</h2>
-      <p>
-        To reduce behavioral bias, the study was presented to participants as an investigation of
-        pose detection from on-board fisheye cameras. Participants started from a designated
-        starting point after a verbal “Go” signal and completed the task at their own pace without
-        a time limit.
-      </p>
-      <p>The following rules were given:</p>
-      <ul>
-        <li>Only one puzzle piece may be carried at a time.</li>
-        <li>
-          After picking up a piece, the participant must locate the matching station and insert it
-          into the corresponding puzzle.
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Sensors and data modalities</h2>
-      <p>
-        All data is recorded from on-board robot sensors. Two fisheye cameras mounted on a
-        vertical pole provide a full <strong>360° robot-centric view</strong> around the robot.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>RGB video</h3>
+          <strong>Setup</strong>
           <ul>
-            <li>2 fisheye cameras</li>
-            <li>~15 Hz</li>
-            <li>2064 × 2464 px per camera</li>
-            <li>Synchronous capture</li>
+            <li>Controlled indoor environment, roughly 7 × 7 m</li>
+            <li>6 table stations and 1 robot station</li>
+            <li>Stationary and moving robot conditions</li>
           </ul>
         </div>
+
         <div class="card">
-          <h3>3D human pose</h3>
+          <strong>Modalities</strong>
           <ul>
-            <li>Full-body pose with 30 joints</li>
-            <li>~10 Hz</li>
-            <li>Participant positions</li>
-            <li>Estimated with MeTRAbs</li>
+            <li>2 fisheye cameras with 360° robot-centric view</li>
+            <li>RGB video at around 15 Hz</li>
+            <li>3D full-body pose with 30 joints at around 10 Hz</li>
           </ul>
         </div>
+
         <div class="card">
-          <h3>Temporal events</h3>
+          <strong>Labeling</strong>
           <ul>
-            <li>Pickup events</li>
-            <li>Drop events</li>
-            <li>Trajectory segmentation</li>
-            <li>Interaction target labeling</li>
+            <li>Pickup and drop events define trajectories</li>
+            <li>Labels assigned from the trajectory destination</li>
+            <li>Robot-targeted trajectories form the positive class</li>
           </ul>
         </div>
       </div>
-    </section>
-
-    <section>
-      <h2>Annotation pipeline</h2>
-      <p>
-        The dataset was annotated using a semi-automatic event-based pipeline. During data
-        collection, the experimenter triggered timestamped events whenever a participant picked up
-        a puzzle piece or reached the destination station.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Step 1: Live annotation</h3>
-          <p>
-            <strong>Pickup</strong> events mark the start of an engagement intention trajectory,
-            while <strong>drop</strong> events mark its end.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Step 2: Manual review</h3>
-          <p>
-            All event labels were reviewed and corrected post hoc to improve timing accuracy and
-            consistency.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Step 3: Automatic labeling</h3>
-          <p>
-            For each drop event, the participant’s position was compared to the robot and station
-            locations to determine the interaction target.
-          </p>
-        </div>
-      </div>
-
-      <h3>Label semantics</h3>
-      <ul>
-        <li>
-          <strong>Pickup → Drop:</strong> engagement intention trajectory toward a target
-        </li>
-        <li>
-          <strong>After Drop → next Pickup:</strong> engaged with the reached target
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Labels and benchmark formulation</h2>
-      <p>
-        The original labels identify whether a participant is intending to engage with the robot or
-        with one of the six stations.
-      </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Label type</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Intending to engage with robot</td>
-              <td>Trajectory ends at the robot station</td>
-            </tr>
-            <tr>
-              <td>Intending to engage with station X</td>
-              <td>Trajectory ends at one of the six table stations</td>
-            </tr>
-            <tr>
-              <td>Engaged with robot / station</td>
-              <td>Period after arrival and before the next pickup</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p>
-        For the binary benchmark task, trajectories toward the robot are treated as
-        <strong>positive</strong> and trajectories toward the stations as
-        <strong>negative</strong>.
-      </p>
-    </section>
-
-    <section>
-      <h2>Participants</h2>
-      <p>
-        The dataset contains <strong>12 sessions</strong>, each associated with a unique
-        participant. Participants were students and researchers working on various robotics topics,
-        but they were not familiar with the actual purpose of the experiment.
-      </p>
-      <p>
-        Data collection took place at the <strong>Bosch Robotics Lab in Renningen, Germany</strong>.
-      </p>
     </section>
 
     <section>
       <h2>Dataset statistics</h2>
-
       <div class="stats">
         <div class="stat">
           <div class="value">12</div>
-          <div class="label">Sessions / participants</div>
+          <div class="label">Sessions</div>
         </div>
         <div class="stat">
           <div class="value">514</div>
-          <div class="label">Annotated intention trajectories</div>
+          <div class="label">Annotated trajectories</div>
         </div>
         <div class="stat">
           <div class="value">~90 min</div>
@@ -549,103 +295,53 @@
         </div>
       </div>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Number of sessions</td>
-              <td>12</td>
-            </tr>
-            <tr>
-              <td>Moving robot condition</td>
-              <td>7</td>
-            </tr>
-            <tr>
-              <td>Stationary robot condition</td>
-              <td>5</td>
-            </tr>
-            <tr>
-              <td>Total recording time</td>
-              <td>5424 s (~90 min)</td>
-            </tr>
-            <tr>
-              <td>Average session length</td>
-              <td>452 s (~7.7 min)</td>
-            </tr>
-            <tr>
-              <td>Total trajectories</td>
-              <td>514</td>
-            </tr>
-            <tr>
-              <td>Average trajectory distance</td>
-              <td>5.40 ± 2.19 m</td>
-            </tr>
-            <tr>
-              <td>Average trajectory duration</td>
-              <td>4.72 ± 1.81 s</td>
-            </tr>
-            <tr>
-              <td>Average trajectories per session</td>
-              <td>42.83</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="grid">
+        <div class="card">
+          <strong>Trajectory statistics</strong>
+          <ul>
+            <li>Average distance: 5.40 ± 2.19 m</li>
+            <li>Average duration: 4.72 ± 1.81 s</li>
+            <li>Average trajectories per session: 42.83</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Use cases</strong>
+          <ul>
+            <li>Binary engagement intention prediction</li>
+            <li>Interaction target prediction</li>
+            <li>Temporal modeling of pre-engagement behavior</li>
+          </ul>
+        </div>
       </div>
-    </section>
-
-    <section>
-      <h2>Data processing and augmentation</h2>
-      <p>
-        For engagement intention prediction, only the pre-engagement phase is used. Raw
-        trajectories consist of 3D full-body poses and the corresponding target location over time.
-        Periods labeled as engaged are excluded from the benchmark task.
-      </p>
-      <p>
-        Fixed-length tracklets are extracted using a sliding-window approach. To reduce dependence
-        on absolute target position, each tracklet is translated into the coordinate frame of the
-        target at the final frame, such that the target is mapped to the origin.
-      </p>
-      <p>
-        By treating the stations as additional targets, each recording session yields many more
-        positive and negative examples than when considering only the robot perspective. Additional
-        random rotational augmentation is applied to improve class balance and generalization.
-      </p>
-    </section>
-
-    <section>
-      <h2>Benchmark tasks</h2>
-      <ul>
-        <li>Binary engagement intention prediction</li>
-        <li>Interaction target prediction</li>
-        <li>Temporal sequence modeling from short pose tracklets</li>
-        <li>Early intention prediction in static and dynamic robot conditions</li>
-      </ul>
     </section>
 
     <section>
       <h2>Download</h2>
       <p>
-        <strong>Status:</strong> Coming soon
+        The dataset can be accessed here:
       </p>
       <p>
-        The dataset, documentation and benchmark split information will be added here after
-        release.
+        <a href="#">Download Dataset</a>
       </p>
     </section>
-    
+
+    <section>
+      <h2>Paper</h2>
+      <p>
+        The paper provides the full description of the experimental design, annotation procedure, processing pipeline and evaluation protocol.
+      </p>
+      <p>
+        <a href="#">Read the paper</a>
+      </p>
+    </section>
+
     <section>
       <h2>Citation</h2>
-      <pre>@dataset{pfaefflin2026dataset,
-  title={Dataset Name (TBD)},
+      <pre>@dataset{pfaefflin2026,
+  title={Engagement Intention Dataset},
   author={Pfaefflin, Vincent},
-  year={2026},
-  note={Dataset website}
+  year={2026}
 }</pre>
     </section>
 
@@ -654,13 +350,10 @@
       <p>
         Vincent Pfaefflin<br>
         Karlsruhe Institute of Technology (KIT)<br>
-        Email: your.email@kit.edu
+        your.email@kit.edu
       </p>
     </section>
 
-    <div class="footer">
-      Last updated: 2026
-    </div>
   </div>
 </body>
 </html>
